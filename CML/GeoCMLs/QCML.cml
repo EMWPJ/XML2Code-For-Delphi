@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<XML2Code name="QCML" type="TQCML" target="TQuakeCatalog" targetUnit="QuakeCatalog">
+  <XMLClass type="TQuakeCatalog" root="1" name="QuakeCatalog">
+    <Child leaf="1" visual="1" name="Name" type="String" path="Name" number="1"/>
+    <Child leaf="1" visual="1" name="Description" type="String" path="Description" number="0"/>
+    <Child leaf="0" visual="1" name="Earthquake" type="TEarthquake" path="Earthquake" number="2"/>
+    <Child leaf="0" visual="1" name="Folder" type="TQCMLFolder" path="Folder" number="2"/>
+  </XMLClass>
+  <XMLClass type="TQCMLFolder" root="0" name="Folder">
+    <Child leaf="1" visual="1" name="Name" type="String" path="Name" number="1"/>
+    <Child leaf="1" visual="1" name="Description" type="String" path="Description" number="0"/>
+    <Child leaf="0" visual="1" name="Earthquake" type="TEarthquake" path="Earthquake" number="2"/>
+    <Child leaf="0" visual="1" name="Folder" type="TQCMLFolder" path="Folder" number="2"/>
+  </XMLClass>
+  <XMLClass type="TEarthquake" root="0" name="Earthquake">
+    <Child leaf="1" visual="1" name="Name" type="String" path="Name" number="1"/>
+    <Child leaf="1" visual="1" name="Description" type="String" path="Description" number="0"/>
+    <Child leaf="1" visual="1" name="Longitude" type="Double" path="Longitude" number="1"/>
+    <Child leaf="1" visual="1" name="Latitude" type="Double" path="Latitude" number="1"/>
+    <Child leaf="1" visual="1" name="Depth" type="Double" path="Depth" number="1"/>
+    <Child leaf="1" visual="1" name="Magnitude" type="Double" path="Magnitude" number="1"/>
+    <Child leaf="1" visual="1" name="Intensity" type="Double" path="Intensity" number="1"/>
+    <Child leaf="0" visual="1" name="Mechanism" type="TMechanism" path="Mechanism" number="1"/>
+    <Child leaf="1" visual="1" name="DateTime" type="TDateTime" path="DateTime" number="0"/>
+  </XMLClass>
+  <XMLClass type="TMechanism" root="0" name="Mechanism">
+    <Child leaf="0" visual="1" name="FaultPlane1" type="TFaultPlane" path="FaultPlane1" number="1"/>
+    <Child leaf="0" visual="1" name="FaultPlane2" type="TFaultPlane" path="FaultPlane2" number="0"/>
+    <Child leaf="0" visual="1" name="MomentTensor" type="TMomentTensor" path="MomentTensor" number="0"/>
+  </XMLClass>
+  <XMLClass type="TFaultPlane" root="0" name="FaultPlane">
+    <Child leaf="1" visual="1" name="Strike" type="Double" path="@Strike" number="1"/>
+    <Child leaf="1" visual="1" name="Dip" type="Double" path="@Dip" number="1"/>
+    <Child leaf="1" visual="1" name="Slip" type="Double" path="@Slip" number="1"/>
+  </XMLClass>
+  <XMLClass type="TMomentTensor" root="0" name="MomentTensor">
+    <Child leaf="1" visual="1" name="mrr" type="Double" path="@mrr" number="1"/>
+    <Child leaf="1" visual="1" name="mtt" type="Double" path="@mtt" number="1"/>
+    <Child leaf="1" visual="1" name="mff" type="Double" path="@mff" number="1"/>
+    <Child leaf="1" visual="1" name="mrt" type="Double" path="@mrt" number="1"/>
+    <Child leaf="1" visual="1" name="mrf" type="Double" path="@mrf" number="1"/>
+    <Child leaf="1" visual="1" name="mtf" type="Double" path="@mtf" number="1"/>
+  </XMLClass>
+</XML2Code>

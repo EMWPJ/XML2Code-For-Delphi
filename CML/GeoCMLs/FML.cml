@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML2Code name="FML" type="TFML" target="TFaultSystem" targetUnit="Fault">
+  <XMLClass type="TFaultSystem" Root="1" name="FaultSystem" path="FaultSystem">
+    <Child name="Name" type="String" path="Name" number="1" leaf="1" visual="1"/>
+    <Child name="Description" type="String" path="Description" number="1" leaf="1" visual="1"/>
+    <Child name="FaultZone" type="TFaultZone" path="FaultZone" number="2" leaf="0" visual="1"/>
+  </XMLClass>
+  <XMLClass type="TFaultZone" Root="0" name="FaultZone">
+    <Child name="Name" type="String" path="Name" number="1" leaf="1" visual="1"/>
+    <Child name="Description" type="String" path="Description" number="1" leaf="1" visual="1"/>
+    <Child name="Fault" type="TFault" path="Fault" number="2" leaf="0" visual="1"/>
+  </XMLClass>
+  <XMLClass type="TFault" Root="0" name="Fault">
+    <Child name="Name" type="String" path="Name" number="1" leaf="1" visual="1"/>
+    <Child name="Description" type="String" path="Description" number="1" leaf="1" visual="1"/>
+    <Child name="Segment" type="TFaultSegment" path="Segment" number="2" leaf="0" visual="1"/>
+  </XMLClass>
+  <XMLClass type="TFaultSegment" Root="0" name="Segment">
+    <Child name="Name" type="String" path="Name" number="1" leaf="1" visual="1"/>
+    <Child name="Description" type="String" path="Description" number="1" leaf="1" visual="1"/>
+    <Child name="Coordinates" type="ArrayCoordinates" path="Coordinate" number="1" leaf="1" visual="1" virtual="0"/>
+    <Child name="FaultFeature" type="String" path="FaultFeature" number="1" leaf="1" visual="1"/>
+    <Child name="ActivityAge" type="String" path="ActivityAge" number="1" leaf="1" visual="1"/>
+    <Child name="Exposure" type="String" path="Exposure" number="1" leaf="1" visual="1"/>
+    <Child name="ShapeLength" type="Double" path="ShapeLength" number="1" leaf="1" visual="1"/>
+    <Child name="Strike" type="Double" path="Strike" number="1" leaf="1" visual="1"/>
+    <Child name="DipDir" type="Double" path="DipDir" number="1" leaf="1" visual="1"/>
+    <Child name="DipAngle" type="Double" path="DipAngle" number="1" leaf="1" visual="1"/>
+  </XMLClass>
+</XML2Code>

@@ -1,0 +1,24 @@
+program KMLTestpRO;
+
+uses
+  Forms,
+  KMLTest in 'KMLTest.pas' {Form2},
+  TextEditForm in '..\XMLCore\TextEditForm.pas' {FormTextEdit},
+  TextEditFrame in '..\XMLCore\TextEditFrame.pas' {FrameTextEdit: TFrame},
+  XMLCore in '..\xmlcore\XMLCore.pas',
+  XMLFrame in '..\XMLCore\XMLFrame.pas' {FrameXML: TFrame},
+  XMLInspector in '..\XMLCore\XMLInspector.pas',
+  XMLLeafTypes in '..\XMLCore\XMLLeafTypes.pas',
+  XMLTree in '..\XMLCore\XMLTree.pas',
+  KML in 'KML.pas',
+  KMLBase in 'KMLBase.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TFormTextEdit, FormTextEdit);
+  Application.Run;
+end.

@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{7AD6B665-E871-485C-8AAF-89CFDD700B95}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="XML2CodeTool\XML2CodePro.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="KMLTest\KMLTestpRO.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="XML2CodePro">
+			<MSBuild Projects="XML2CodeTool\XML2CodePro.dproj"/>
+		</Target>
+		<Target Name="XML2CodePro:Clean">
+			<MSBuild Targets="Clean" Projects="XML2CodeTool\XML2CodePro.dproj"/>
+		</Target>
+		<Target Name="XML2CodePro:Make">
+			<MSBuild Targets="Make" Projects="XML2CodeTool\XML2CodePro.dproj"/>
+		</Target>
+		<Target Name="KMLTestpRO">
+			<MSBuild Projects="KMLTest\KMLTestpRO.dproj"/>
+		</Target>
+		<Target Name="KMLTestpRO:Clean">
+			<MSBuild Targets="Clean" Projects="KMLTest\KMLTestpRO.dproj"/>
+		</Target>
+		<Target Name="KMLTestpRO:Make">
+			<MSBuild Targets="Make" Projects="KMLTest\KMLTestpRO.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="XML2CodePro;KMLTestpRO"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="XML2CodePro:Clean;KMLTestpRO:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="XML2CodePro:Make;KMLTestpRO:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

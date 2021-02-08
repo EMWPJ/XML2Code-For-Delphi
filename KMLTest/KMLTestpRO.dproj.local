@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.dproj,D:\D2010XML\KMLTest\KMLTestpRO.dproj=C:\Users\w4784\Documents\RAD Studio\Projects\Project4.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.dfm,D:\D2010XML\KMLTest\KMLTest.dfm=C:\Users\w4784\Documents\RAD Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.pas,D:\D2010XML\KMLTest\KMLTest.pas=C:\Users\w4784\Documents\RAD Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.pas,D:\D2010XML\KMLTest\KML.pas=</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.pas,D:\D2010XML\KMLTest\KMLBase.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

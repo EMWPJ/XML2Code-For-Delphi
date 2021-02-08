@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML2Code name="GPX" type="TGPX" target="TGPXFile" targetUnit="GPXFile">
+  <XMLClass type="TGPXFile" Root="1" name="gpx" abstract="0" path="gpx">
+    <Child name="xmlns" type="String" path="@xmlns" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Creator" type="String" path="@creator" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Metadata" type="TGPXMetadata" path="metadata" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="Element" type="TGPXElement" path="#Optional" number="2" leaf="0" visual="1" virtual="1"/>
+    <Child name="Extensions" type="TXMLBase" path="extensions" number="2" leaf="0" visual="1" virtual="0"/>
+    <Child name="Version" type="String" path="@version" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="xmlnsxsi" type="String" path="@xmlns:xsi" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="xsischemaLocation" type="String" path="@xsi:schemaLocation" number="0" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TGPXElement" Root="1" name="Element" childClass="TGPXWayPoint TGPXRoute TGPXTrack" abstract="1" path="#Optional">
+    <Child name="Name" type="String" path="name" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Comment" type="String" path="cmt" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Description" type="String" path="desc" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Source" type="String" path="src" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Extensions" type="TXMLBase" path="extensions" number="2" leaf="0" visual="1" virtual="0"/>
+    <Child name="Link" type="TGPXLink" path="link" number="2" leaf="0" visual="1" virtual="0"/>
+    <Child name="TypeS" type="String" path="type" number="0" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TGPXWayPoint" Root="1" name="WayPoint" parentClass="TGPXElement" abstract="0" path="wpt">
+    <Child name="Dgpsid" type="Integer" path="dgpsid" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Latitude" type="String" path="@lat" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Longitude" type="String" path="@lon" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Elevation" type="String" path="ele" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Time" type="TDateTime" path="time" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Geoidheight" type="Double" path="geoidheight" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Symbol" type="String" path="sym" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Satellites" type="Integer" path="sat" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Horizontal" type="Double" path="hdop" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Fix" type="String" path="fix" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Vertical" type="Double" path="vdop" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Position" type="Double" path="pdop" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Ageofdgpsdata" type="Double" path="ageofdgpsdata" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Magvar" type="Double" path="magvar" number="0" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TGPXRoute" Root="1" name="Route" parentClass="TGPXElement" abstract="0" path="rte">
+    <Child name="Points" type="TGPXWayPoint" path="rtept" number="2" leaf="0" visual="1" virtual="0"/>
+    <Child name="Number" type="Integer" path="number" number="0" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TGPXTrack" Root="1" name="Track" parentClass="TGPXElement" abstract="0" path="trk">
+    <Child name="TrackSegments" type="TGPXTrackSegment" path="trkseg" number="2" leaf="0" visual="1" virtual="0"/>
+    <Child name="Number" type="Integer" path="number" number="0" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TGPXTrackSegment" Root="1" name="TrackSegment" abstract="0" path="trkseg">
+    <Child name="Points" type="TGPXWayPoint" path="trkpt" number="2" leaf="0" visual="1" virtual="0"/>
+    <Child name="Extensions" type="TXMLBase" path="extensions" number="2" leaf="0" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TGPXMetadata" Root="1" name="GPXMetadata" abstract="0" path="metadata">
+    <Child name="link" type="TGPXLink" path="link" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="author" type="TGPXPerson" path="author" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="copyright" type="TGPXCopyright" path="copyright" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="bounds" type="TGPXBounds" path="bounds" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="extensions" type="TXMLBase" path="extensions" number="2" leaf="0" visual="1" virtual="0"/>
+    <Child name="name" type="String" path="name" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="description" type="String" path="desc" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="time" type="TDateTime" path="time" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="keywords" type="String" path="keywords" number="0" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TGPXCopyright" Root="1" name="Copyright" abstract="0" path="copyright">
+    <Child name="year" type="Integer" path="year" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="author" type="String" path="@author" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="license" type="String" path="license" number="0" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TGPXLink" Root="1" name="Link" abstract="0" path="link">
+    <Child name="Text" type="String" path="text" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="TypeS" type="String" path="type" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Href" type="String" path="@href" number="0" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TGPXEmail" Root="1" name="Email" abstract="0" path="email">
+    <Child name="ID" type="String" path="@id" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Domain" type="String" path="@domain" number="0" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TGPXPerson" Root="1" name="Person" abstract="0" path="person">
+    <Child name="Email" type="TGPXEmail" path="email" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="Link" type="TGPXLink" path="link" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="Name" type="String" path="name" number="0" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TGPXPoint" Root="1" name="Point" abstract="0" path="pt">
+    <Child name="Latitude" type="String" path="@lat" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Longitude" type="String" path="@lon" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Elevation" type="String" path="ele" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Time" type="TDateTime" path="time" number="0" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TGPXBounds" Root="1" name="Bounds" abstract="0" path="bounds">
+    <Child name="maxlat" type="Double" path="@maxlat" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="maxlon" type="Double" path="@maxlon" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="minlat" type="Double" path="@minlat" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="minlon" type="Double" path="@minlon" number="0" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+</XML2Code>

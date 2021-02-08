@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML2Code name="CML" type="TCML" target="TXML2Code" targetUnit="XML2Code">
+  <XMLClass type="TXML2Code" Root="0" name="XML2Code" abstract="0" path="XML2Code">
+    <Child name="XMLClass" type="TXML2CodeClass" path="XMLClass" number="2" leaf="0" visual="1"/>
+    <Child name="Name" type="String" path="@name" number="1" leaf="1" visual="1"/>
+    <Child name="Datatype" type="String" path="@type" number="1" leaf="1" visual="1"/>
+    <Child name="Target" type="String" path="@target" number="1" leaf="1" visual="1"/>
+    <Child name="TargetUnit" type="String" path="@targetUnit" number="1" leaf="1" visual="1"/>
+    <Child name="Using" type="String1D" path="@using" number="0" leaf="1" visual="1"/>
+  </XMLClass>
+  <XMLClass type="TXML2CodeClass" Root="0" name="Class" abstract="0" path="Class">
+    <Child name="Child" type="TXML2CodeChild" path="Child" number="2" leaf="0" visual="1"/>
+    <Child name="DataType" type="String" path="@type" number="1" leaf="1" visual="1"/>
+    <Child name="Root" type="Boolean" path="@Root" number="1" leaf="1" visual="1"/>
+    <Child name="Name" type="String" path="@name" number="1" leaf="1" visual="1"/>
+    <Child name="ParentClass" type="String" path="@parentClass" number="0" leaf="1" visual="1"/>
+    <Child name="ChildClass" type="String1D" path="@childClass" number="0" leaf="1" visual="1"/>
+    <Child name="isAbstract" type="Boolean" path="@abstract" number="0" leaf="1" visual="1"/>
+    <Child name="Path" type="String" path="@path" number="0" leaf="1" visual="1"/>
+  </XMLClass>
+  <XMLClass type="TXML2CodeChild" Root="0" name="Child" abstract="0" path="Child">
+    <Child name="Name" type="String" path="@name" number="1" leaf="1" visual="1"/>
+    <Child name="DataType" type="String" path="@type" number="1" leaf="1" visual="1"/>
+    <Child name="Path" type="String" path="@path" number="1" leaf="1" visual="1"/>
+    <Child name="Number" type="Integer" path="@number" number="1" leaf="1" visual="1"/>
+    <Child name="Leaf" type="Boolean" path="@leaf" number="1" leaf="1" visual="1"/>
+    <Child name="Visual" type="Boolean" path="@visual" number="1" leaf="1" visual="1"/>
+    <Child name="isVirtual" type="Boolean" path="@virtual" number="0" leaf="1" visual="1"/>
+  </XMLClass>
+</XML2Code>

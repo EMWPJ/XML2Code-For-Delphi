@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML2Code name="KML" type="TKML" target="TKMLFile" targetUnit="KMLFile">
+  <XMLClass type="TKMLFile" Root="1" name="KMLFile" abstract="0" path="kml">
+    <Child name="Xmlns" type="String" path="@xmlns" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Document" type="TKMLDocument" path="Document" number="1" leaf="0" visual="1" virtual="0"/>
+    <Child name="Folder" type="TKMLFolder" path="Folder" number="2" leaf="0" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLDocument" Root="1" name="Document" abstract="0" path="Document">
+    <Child name="Name" type="String" path="name" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Open" type="Integer" path="open" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Visibility" type="Integer" path="visibility" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Description" type="String" path="description" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="LookAt" type="TKMLLookAt" path="LookAt" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="StyleMap" type="TKMLStyleMap" path="StyleMap" number="2" leaf="0" visual="1" virtual="0"/>
+    <Child name="Style" type="TKMLStyle" path="Style" number="2" leaf="0" visual="1" virtual="0"/>
+    <Child name="Placemark" type="TKMLPlacemark" path="Placemark" number="2" leaf="0" visual="1" virtual="0"/>
+    <Child name="Folder" type="TKMLFolder" path="Folder" number="2" leaf="0" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLFolder" Root="1" name="Folder" abstract="0" path="Folder">
+    <Child name="Name" type="String" path="name" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Open" type="Integer" path="open" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Visibility" type="Integer" path="visibility" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Description" type="String" path="description" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="LookAt" type="TKMLLookAt" path="LookAt" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="Document" type="TKMLDocument" path="Document" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="GroundOverlay" type="TKMLGroundOverlay" path="GroundOverlay" number="2" leaf="0" visual="1" virtual="0"/>
+    <Child name="Placemark" type="TKMLPlacemark" path="Placemark" number="2" leaf="0" visual="1" virtual="0"/>
+    <Child name="ScreenOverlay" type="TKMLScreenOverlay" path="ScreenOverlay" number="2" leaf="0" visual="1" virtual="0"/>
+    <Child name="Folder" type="TKMLFolder" path="Folder" number="2" leaf="0" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLPlacemark" Root="1" name="Placemark" abstract="0" path="Placemark">
+    <Child name="Name" type="String" path="name" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Visibility" type="Integer" path="visibility" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Description" type="String" path="description" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="LookAt" type="TKMLLookAt" path="LookAt" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="StyleUrl" type="String" path="styleUrl" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Geometry" type="TKMLGeometry" path="#Optional" number="0" leaf="0" visual="1" virtual="1"/>
+    <Child name="ExtendedData" type="TKMLExtendedData" path="ExtendedData" number="0" leaf="0" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLGeometry" Root="1" name="Geometry" childClass="TKMLPoint TKMLPolygon TKMLLinearRing TKMLLineString TKMLMultiGeometry" abstract="1" path="#Optional"/>
+  <XMLClass type="TKMLMultiGeometry" Root="1" name="MultiGeometry" parentClass="TKMLGeometry" abstract="0" path="MultiGeometry">
+    <Child name="Geometry" type="TKMLGeometry" path="#Optional" number="2" leaf="0" visual="1" virtual="1"/>
+  </XMLClass>
+  <XMLClass type="TKMLPoint" Root="1" name="Point" parentClass="TKMLGeometry" abstract="0" path="Point">
+    <Child name="Extrude" type="String" path="extrude" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="AltitudeMode" type="String" path="altitudeMode" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Coordinates" type="ArrayCoordinates" path="coordinates" number="1" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLPolygon" Root="1" name="Polygon" parentClass="TKMLGeometry" abstract="0" path="Polygon">
+    <Child name="Extrude" type="String" path="extrude" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="AltitudeMode" type="String" path="altitudeMode" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="OuterBoundaryIs" type="TKMLBoundary" path="outerBoundaryIs" number="2" leaf="0" visual="1" virtual="0"/>
+    <Child name="InnerBoundaryIs" type="TKMLBoundary" path="innerBoundaryIs" number="2" leaf="0" visual="1" virtual="0"/>
+    <Child name="Tessellate" type="String" path="tessellate" number="0" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLBoundary" Root="1" name="Boundary" abstract="0" path="Boundary">
+    <Child name="LinearRing" type="TKMLLinearRing" path="LinearRing" number="1" leaf="0" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLLinearRing" Root="1" name="LinearRing" parentClass="TKMLGeometry" abstract="0" path="LinearRing">
+    <Child name="Coordinates" type="ArrayCoordinates" path="coordinates" number="1" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLLineString" Root="1" name="LineString" parentClass="TKMLGeometry" abstract="0" path="LineString">
+    <Child name="Tessellate" type="String" path="tessellate" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="AltitudeMode" type="String" path="altitudeMode" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Extrude" type="String" path="extrude" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Coordinates" type="ArrayCoordinates" path="coordinates" number="1" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLLookAt" Root="1" name="LookAt" abstract="0" path="LookAt">
+    <Child name="Longitude" type="Double" path="longitude" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Latitude" type="Double" path="latitude" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Altitude" type="Double" path="altitude" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Heading" type="Double" path="heading" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Tilt" type="Double" path="tilt" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Range" type="Double" path="range" number="0" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLLatLonBox" Root="1" name="LatLonBox" abstract="0" path="LatLonBox">
+    <Child name="North" type="Double" path="north" number="1" leaf="1" visual="1" virtual="0"/>
+    <Child name="South" type="Double" path="south" number="1" leaf="1" visual="1" virtual="0"/>
+    <Child name="East" type="Double" path="east" number="1" leaf="1" visual="1" virtual="0"/>
+    <Child name="West" type="Double" path="west" number="1" leaf="1" visual="1" virtual="0"/>
+    <Child name="Rotation" type="Double" path="rotation" number="1" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLGroundOverlay" Root="1" name="GroundOverlay" abstract="0" path="GroundOverlay">
+    <Child name="Name" type="String" path="name" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Visibility" type="Integer" path="visibility" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Description" type="String" path="description" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="LookAt" type="TKMLLookAt" path="LookAt" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="Icon" type="TKMLIcon" path="Icon" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="LatLonBox" type="TKMLLatLonBox" path="LatLonBox" number="0" leaf="0" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLExtendedData" Root="1" name="ExtendedData" abstract="0" path="ExtendedData">
+    <Child name="Data" type="TKMLData" path="Data" number="2" leaf="0" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLData" Root="1" name="Data" abstract="0" path="Data">
+    <Child name="Name" type="String" path="@name" number="1" leaf="1" visual="1" virtual="0"/>
+    <Child name="Value" type="String" path="value" number="1" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLSize" Root="1" name="Size" abstract="0" path="Size">
+    <Child name="X" type="Double" path="@x" number="1" leaf="1" visual="1" virtual="0"/>
+    <Child name="Y" type="Double" path="@y" number="1" leaf="1" visual="1" virtual="0"/>
+    <Child name="XUnits" type="String" path="@xunits" number="1" leaf="1" visual="1" virtual="0"/>
+    <Child name="YUnits" type="String" path="@yunits" number="1" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLStyle" Root="1" name="Style" abstract="0" path="Style">
+    <Child name="ID" type="String" path="@id" number="1" leaf="1" visual="1" virtual="0"/>
+    <Child name="IconStyle" type="TKMLIconStyle" path="IconStyle" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="LineStyle" type="TKMLLineStyle" path="LineStyle" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="PolyStyle" type="TKMLLineStyle" path="PolyStyle" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="BalloonStyle" type="TKMLBalloonStyle" path="BalloonStyle" number="0" leaf="0" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLIconStyle" Root="1" name="IconStyle" abstract="0" path="IconStyle">
+    <Child name="Icon" type="TKMLIcon" path="Icon" number="1" leaf="0" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLIcon" Root="1" name="Icon" abstract="0" path="Icon">
+    <Child name="href" type="String" path="href" number="1" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLLineStyle" Root="1" name="LineStyle" abstract="0" path="LineStyle">
+    <Child name="color" type="String" path="color" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="width" type="Double" path="width" number="0" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLBalloonStyle" Root="1" name="BalloonStyle" abstract="0" path="BalloonStyle">
+    <Child name="text" type="String" path="~text" number="1" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLStyleMap" Root="1" name="StyleMap" abstract="0" path="StyleMap">
+    <Child name="Pair" type="TKMLPair" path="Pair" number="2" leaf="0" visual="1" virtual="0"/>
+    <Child name="ID" type="String" path="@id" number="1" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLScreenOverlay" Root="1" name="ScreenOverlay" abstract="0" path="ScreenOverlay">
+    <Child name="Name" type="String" path="name" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Visibility" type="Integer" path="visibility" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Description" type="String" path="description" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="Icon" type="TKMLIcon" path="Icon" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="OverlayXY" type="TKMLSize" path="overlayXY" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="ScreenXY" type="TKMLSize" path="screenXY" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="RotationXY" type="TKMLSize" path="rotationXY" number="0" leaf="0" visual="1" virtual="0"/>
+    <Child name="Size" type="TKMLSize" path="size" number="0" leaf="0" visual="1" virtual="0"/>
+  </XMLClass>
+  <XMLClass type="TKMLPair" Root="1" name="Pair" abstract="0" path="Pair">
+    <Child name="Key" type="String" path="key" number="0" leaf="1" visual="1" virtual="0"/>
+    <Child name="StyleUrl" type="String" path="styleUrl" number="0" leaf="1" visual="1" virtual="0"/>
+  </XMLClass>
+</XML2Code>
